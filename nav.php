@@ -24,7 +24,7 @@
             print ' activePage ';
         }
         print '">';
-        print '<a href="about.php">About</a>';
+        print '<a href="about.php">About Us</a>';
         print '</li>';
         
         print '<li class="';
