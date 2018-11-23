@@ -20,9 +20,9 @@ $path_parts = pathinfo($phpSelf);
             print '';
         }
 
-        if ($path_parts['filename'] == "news") {
+        /*if ($path_parts['filename'] == "news") {
             print '';
-        }
+        }*/
 
         if ($path_parts['filename'] == "photos") {
             print '';
@@ -55,9 +55,9 @@ $path_parts = pathinfo($phpSelf);
             print '';
         }
 
-        if ($path_parts['filename'] == "news") {
+        /*if ($path_parts['filename'] == "news") {
             print '';
-        }
+        }*/
 
         if ($path_parts['filename'] == "photos") {
             print '';
@@ -105,6 +105,6 @@ $path_parts = pathinfo($phpSelf);
     ?>
    
     <?php
-    include ("header.php");
+    //include ("header.php");
     include ("nav.php");
     ?>

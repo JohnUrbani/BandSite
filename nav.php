@@ -11,13 +11,13 @@
         print '<a href="index.php">Home</a>';
         print '</li>';
         
-        print '<li class="';
+        /*print '<li class="';
         if ($path_parts['filename'] == "news") {
             print ' activePage ';
         }
         print '">';
         print '<a href="news.php">News</a>';
-        print '</li>';
+        print '</li>';*/
         
         print '<li class="';
         if ($path_parts['filename'] == "about") {

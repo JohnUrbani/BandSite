@@ -13,8 +13,6 @@ $file = fopen($filename, "r");
         while (!feof($file)) {
             $bios[] = fgetcsv($file);
         }
-
-        print '<table>';
         
         $alternate = true;
         
@@ -35,7 +33,6 @@ $file = fopen($filename, "r");
                 }
             }
         }
-        print '</table>';
     } // ends if file was opened 
     fclose($file);
     ?>

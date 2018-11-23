@@ -15,15 +15,16 @@ img {
 }
 
 main {
+    margin-top: 40px;
     margin-left: 25px;
     margin-right: 25px;
     background-color: #fff;
     padding: 20px;
 }
 
-h1 {
+/*h1 {
     margin-top: 2em;
-}
+}*/
 
 /* =============== Navigation =============== */
 
@@ -31,7 +32,6 @@ nav {
     height: 3em;
     background-color: #555;
     padding: 5px;
-    
     position: fixed;
     width: 1000px;
     margin-left: -5px;
@@ -49,6 +49,7 @@ nav ul {
 
 nav ul li {
     float: left;
+    width: 166.66px;
 }
 
 nav ul li a:hover {
@@ -69,6 +70,66 @@ nav ul li a {
 
 /* =============== Contact Form =============== */
 
+fieldset {
+    border: 2px solid #00498e;
+    clear: both;
+    margin-top: 2em;
+    padding: 1em;
+}
+
+label {
+    color: #005cb3;
+    display: block;
+    font-weight: bold;
+    padding-right: 1em;
+}
+
+input,
+textarea,
+select {
+    box-sizing: border-box;
+    border: 2px solid #C2C2C2;
+    box-shadow: 2px 2px 4px #EBEBEB;
+    border-radius: 3px;
+    padding: 1em;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border: 1px solid #0C0;
+}
+
+input[type=submit] {
+    background: #005cb3 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 3px;
+    box-shadow: 1px 1px 4px #dadada;
+    color: #fff;
+    width: 100%;
+}
+
+.buttons legend {
+    display: none;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.form-heading {
+    border-bottom: 2px solid #ddd;
+    font-size: 1.25em;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 1.75em;
+    padding-bottom: 0.4em;
+}
+
+.text-field {
+    width: 100%
+}
+
 /* Style errors in form so they're more obvious */
 .mistake {
     color: #fff;
@@ -78,6 +139,13 @@ nav ul li a {
 
 #errors ol li {
     color: #ff5555;
+}
+
+.checkbox.mistake legend,
+.radio.mistake legend,
+.listbox.mistake legend
+{
+    background-color: #800;
 }
 
 /* =============== About Us Bios =============== */
@@ -99,6 +167,31 @@ nav ul li a {
     font-size: 30px;
 }
 
+#about main {
+    margin-top: 55px;
+}
+
 #about img {
-    padding: 0em, 1em, 1em, 1em;
+    padding: 0em 1em 1em 1em;
+}
+
+/* =============== Footer =============== */
+
+footer {
+    height: 3em;
+    background-color: #555;
+    padding: 5px;
+    width: 950px;
+    margin-left: 20px;
+    float: left;
+}
+
+/* =============== Media =============== */
+
+#videos iframe {
+    margin-left: 50px;
+}
+
+#videos h2 {
+    margin: 1em;
 }
