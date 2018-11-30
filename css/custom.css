@@ -26,6 +26,12 @@ main {
     margin-top: 2em;
 }*/
 
+/* =============== Home =============== */
+#index p {
+    font-size: 18px;
+    padding: 0em 28em 0em 1em;
+}
+
 /* =============== Navigation =============== */
 
 nav {
@@ -172,7 +178,9 @@ input[type=submit] {
 }
 
 #about img {
-    padding: 0em 1em 1em 1em;
+    padding: 1px;
+    margin: 0em 1em 0em 1em;
+    border:1px solid #021a40;
 }
 
 /* =============== Footer =============== */
