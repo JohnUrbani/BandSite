@@ -3,9 +3,8 @@ include ("top.php");
 ?>
 <main>
     <article class='info'>
-        <h1>BAND TITLE STUFF WOW</h1>
-        <h2>General info header</h2>
-        <p>The actual info here</p>
+        <h1>A Tribute to The Beatles</h1>
+        <p>Find news stories, look at old photographs, and watch their music videos.</p>
     </article>
     <hr>
     <article class='news'>

@@ -68,6 +68,8 @@ nav ul li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-size: 15px;
+    text-transform: uppercase;
 }
 
 .activePage {
@@ -154,7 +156,7 @@ input[type=submit] {
     background-color: #800;
 }
 
-/* =============== About Us Bios =============== */
+/* =============== About the Band Bios =============== */
 
 #about article {
      height:300px;
@@ -167,6 +169,7 @@ input[type=submit] {
 
 #about p {
     font-size: 18px;
+    line-height: 1.5em;
 }
 
 #about h2 {
