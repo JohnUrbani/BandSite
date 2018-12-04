@@ -7,25 +7,24 @@ $filename = 'data/shows.csv';
 $file = fopen($filename, "r");
 ?>
 <main>
+    <h2>Find Live Shows and Tickets</h2>
     <?php
     if ($file) {
         // read all the data
         while (!feof($file)) {
             $shows[] = fgetcsv($file);
         }
-
-        print '<table>';
+        
         foreach ($shows as $show) {
             if ($show[0] != "") {
-                print '<tr>';
-                print '<td><p>' . $show[0] . '</p></td>';
-                print '<td><p>' . $show[1] . '</p></td>';
-                print '<td><p>' . $show[2] . '</p></td>';
-                print '<td><p>' . $show[3] . '</p></td>';
-                print '</tr>';
+                print '<article>';
+                print '<header><h2>' . $show[0] . '</h2></header>';
+                print '<hr>';
+                print '<h1>' . $show[1] . '</h1>';
+                print '<p>Show on ' . $show[2] . ', <a href="' . $show[3] . '">get tickets here.</a></p>';
+                print '</article>';
             }
         }
-        print '</table>';
     } // ends if file was opened 
     fclose($file);
     ?>

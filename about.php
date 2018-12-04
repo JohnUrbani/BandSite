@@ -7,6 +7,7 @@ $filename = 'data/bios.csv';
 $file = fopen($filename, "r");
 ?>
 <main>
+    <h2 style="text-align:center;">Learn About the Band</h2>
     <?php
     if ($file) {
         // read all the data

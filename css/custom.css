@@ -206,3 +206,34 @@ footer {
 #videos h2 {
     margin: 1em;
 }
+
+#videos h2,
+#videos h1,
+#videos p
+{
+    text-align: center;
+}
+
+#videos h1 {
+    font-size: 2em;
+}
+
+/* =============== Shows =============== */
+#shows h2,
+#shows h1,
+#shows p
+{
+    text-align: center;
+}
+
+#shows h2 {
+    font-size: 2em;
+}
+
+#shows article {
+     border: 3px solid black;
+     border-radius: 2em;
+     padding: 3%;
+     padding-top: 0px;
+     margin: 1%;
+}
