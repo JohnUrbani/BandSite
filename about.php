@@ -7,8 +7,9 @@ $filename = 'data/bios.csv';
 $file = fopen($filename, "r");
 ?>
 <main>
-    <h2 style="text-align:center;">Learn About the Band</h2>
-    <?php
+    <h1 style="font-size:2em;text-align:center;">Learn About the Band</h1>
+    <hr>
+        <?php
     if ($file) {
         // read all the data
         while (!feof($file)) {

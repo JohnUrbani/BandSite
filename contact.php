@@ -184,7 +184,8 @@ if (isset($_POST["btnSubmit"])) {
             print $message;
         } else {
 
-            print '<h2>Contact Us</h2>';
+            print '<h1 style="font-size:2em;text-align:center;">Contact Us</h1>';
+            print '<hr>';
             print `<p class = "form-heading">Ask questions and we'll get back to you!</p>`;
 
             if ($errorMsg) {

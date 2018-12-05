@@ -8,6 +8,7 @@ $file = fopen($filename, "r");
 ?>
 <main>
     <h2>Find Live Shows and Tickets</h2>
+    <hr>
     <?php
     if ($file) {
         // read all the data

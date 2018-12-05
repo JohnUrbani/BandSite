@@ -156,6 +156,10 @@ input[type=submit] {
     background-color: #800;
 }
 
+#contact h1 {
+    font-size: 2em;
+}
+
 /* =============== About the Band Bios =============== */
 
 #about article {
