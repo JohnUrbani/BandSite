@@ -22,13 +22,13 @@ $file = fopen($filename, "r");
                 if ($alternate) {
                     print '<article>';
                     print '<header><h2>' . $bio[1] . '</h2></header>';
-                    print '<p><img = src="images\\' . $bio[0] . '", alt=' . $bio[1] . ', style="float:left;width:200px;height:200px;"><p>' . $bio[2] . '</p>';
+                    print '<p><img src="images/' . $bio[0] . '" alt="' . $bio[1] . '" style="float:left;width:200px;height:200px;"><p>' . $bio[2] . '</p>';
                     print '</article>';
                     $alternate = false;
                 } else {
                     print '<article>';
                     print '<header><h2>' . $bio[1] . '</h2></header>';
-                    print '<p><img = src="images\\' . $bio[0] . '", alt=' . $bio[1] . ', style="float:right;width:200px;height:200px;"><p>' . $bio[2] . '</p>';
+                    print '<p><img src="images/' . $bio[0] . '" alt="' . $bio[1] . '" style="float:right;width:200px;height:200px;"><p>' . $bio[2] . '</p>';
                     print '</article>';
                     $alternate = true;
                 }

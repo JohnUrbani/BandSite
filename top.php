@@ -9,15 +9,15 @@ $path_parts = pathinfo($phpSelf);
         <?php
         print '<title>';
         if ($path_parts['filename'] == "about") {
-            print '';
+            print 'About the Band';
         }
 
         if ($path_parts['filename'] == "contact") {
-            print '';
+            print 'Contact Us';
         }
 
         if ($path_parts['filename'] == "index") {
-            print '';
+            print 'Home';
         }
 
         /*if ($path_parts['filename'] == "news") {
@@ -25,15 +25,15 @@ $path_parts = pathinfo($phpSelf);
         }*/
 
         if ($path_parts['filename'] == "photos") {
-            print '';
+            print 'Photos';
         }
 
         if ($path_parts['filename'] == "shows") {
-            print '';
+            print 'Shows';
         }
 
         if ($path_parts['filename'] == "videos") {
-            print '';
+            print 'Videos';
         }
         print('</title>')
         ?>
@@ -44,15 +44,15 @@ $path_parts = pathinfo($phpSelf);
         <?php
         print '<meta name="description" content="';
         if ($path_parts['filename'] == "about") {
-            print '';
+            print 'Learn about the Beatles band members';
         }
 
         if ($path_parts['filename'] == "contact") {
-            print '';
+            print 'Contact the owners of the website';
         }
 
         if ($path_parts['filename'] == "index") {
-            print '';
+            print 'Home page with recent Beatles news';
         }
 
         /*if ($path_parts['filename'] == "news") {
@@ -60,15 +60,15 @@ $path_parts = pathinfo($phpSelf);
         }*/
 
         if ($path_parts['filename'] == "photos") {
-            print '';
+            print 'Photos of the Beatles';
         }
 
         if ($path_parts['filename'] == "shows") {
-            print '';
+            print 'Show times for Paul, Ringo, and tribute bands';
         }
 
         if ($path_parts['filename'] == "videos") {
-            print '';
+            print 'Beatles music videos and information about them';
         }
         print('">')
         ?>

@@ -218,6 +218,10 @@ footer {
     font-size: 2em;
 }
 
+#videos iframe{
+    border-width: 0px;
+}
+
 /* =============== Shows =============== */
 #shows h2,
 #shows h1,
