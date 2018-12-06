@@ -3,23 +3,26 @@ include 'top.php';
 
 $firstName = "";
 $lastName = "";
-$gender = "Male";
-$cool = false;
-$satisfied = true;
-$willing = true;
-$time = "Eastern Standard";
+$member = "Paul";
+$comeTogether = false;
+$helloGoodbye = false;
+$pennyLane = false;
+$dontLetMeDown = false;
+$help = false;
+$ticketToRide = false;
+$page = "Home";
 $comments = "";
 $email = "";
 
 $firstNameERROR = false;
 $lastNameERROR = false;
-$genderERROR = false;
+$memberERROR = false;
 $checkERROR = false;
 $totalChecked = 0;
 $totalERROR = false;
 $commentsERROR = false;
 $emailERROR = false;
-
+$pageERROR = false;
 $errorMsg = array();
 
 $mailed = false;
@@ -36,28 +39,47 @@ if (isset($_POST["btnSubmit"])) {
 
     $firstName = htmlentities($_POST["txtFirstName"], ENT_QUOTES, "UTF-8");
     $lastName = htmlentities($_POST["txtLastName"], ENT_QUOTES, "UTF-8");
-    $gender = htmlentities($_POST["radGender"], ENT_QUOTES, "UTF-8");
+    $member = htmlentities($_POST["radMember"], ENT_QUOTES, "UTF-8");
     
-    if (isset($_POST["chkCool"])) {
-        $cool = true;
+    if (isset($_POST["chkComeTogether"])) {
+        $comeTogether = true;
         $totalChecked++;
     } else {
-    $cool = false;
+    $comeTogether = false;
     }
-    if (isset($_POST["chkSatisfied"])) {
-        $satisfied = true;
+    if (isset($_POST["chkHelloGoodbye"])) {
+        $helloGoodbye = true;
         $totalChecked++;
     } else {
-    $satisfied = false;
+    $helloGoodbye = false;
     }
-    if (isset($_POST["chkWilling"])) {
-        $willing = true;
+    if (isset($_POST["PennyLane"])) {
+        $pennyLane = true;
         $totalChecked++;
     } else {
-    $willing = false;
+    $pennyLane = false;
+    }
+    if (isset($_POST["chkDontLetMeDown"])) {
+        $dontLetMeDown = true;
+        $totalChecked++;
+    } else {
+    $dontLetMeDown = false;
+    }
+    if (isset($_POST["chkHelp"])) {
+        $help = true;
+        $totalChecked++;
+    } else {
+    $help = false;
+    }
+    if (isset($_POST["chkTicketToRide"])) {
+        $ticketToRide = true;
+        $totalChecked++;
+    } else {
+    $ticketToRide = false;
     }
     
-    $time = htmlentities($_POST["zneTime"], ENT_QUOTES, "UTF-8");
+    
+    $page = htmlentities($_POST["favPage"], ENT_QUOTES, "UTF-8");
     $comments = htmlentities($_POST["txtComments"], ENT_QUOTES, "UTF-8");
     $email = filter_var($_POST["txtEmail"], FILTER_SANITIZE_EMAIL);
 
@@ -77,24 +99,19 @@ if (isset($_POST["btnSubmit"])) {
         $lastNameERROR = true;
     }
     
-    if ($gender != "Female" AND $gender != "Male" AND $gender != "Prefer") {
-        $errorMsg[] = "Please choose a gender";
-        $genderERROR = true;
+    if ($member != "Paul" AND $member != "John" AND $member != "George" AND $member != "Ringo") {
+        $errorMsg[] = "Please choose a Beatle";
+        $memberERROR = true;
     }
 
-    if ($totalChecked < 2) {
-        $errorMsg[] = "Please check atleast two boxes";
-        $checkERROR = true;
-    }
-    
-    if (!$satisfied) {
-        $errorMsg[] = "Please check the satisfied box so my boss thinks my website is good";
+    if ($totalChecked < 1) {
+        $errorMsg[] = "Please check atleast one box";
         $checkERROR = true;
     }
 
-    if ($time == "") {
-        $errorMsg[] = "Please select your time zone";
-        $timeERROR = true;
+    if ($page == "") {
+        $errorMsg[] = "Please select your favorite page";
+        $pageERROR = true;
     }
 
     if ($comments != "") {
@@ -120,11 +137,14 @@ if (isset($_POST["btnSubmit"])) {
 
         $dataRecord[] = $firstName;
         $dataRecord[] = $lastName;
-        $dataRecord[] = $gender;
-        $dataRecord[] = $cool;
-        $dataRecord[] = $satisfied;
-        $dataRecord[] = $willing;
-        $dataRecord[] = $time;
+        $dataRecord[] = $member;
+        $dataRecord[] = $comeTogether;
+        $dataRecord[] = $helloGoodbye;
+        $dataRecord[] = $pennyLane;
+        $dataRecord[] = $dontLetMeDown;
+        $dataRecord[] = $help;
+        $dataRecord[] = $ticketToRide;
+        $dataRecord[] = $page;
         $dataRecord[] = $comments;
         $dataRecord[] = $email;
 
@@ -184,7 +204,7 @@ if (isset($_POST["btnSubmit"])) {
             print $message;
         } else {
 
-            print '<h1 style="font-size:2em;text-align:center;">Contact Us</h1>';
+            print '<h1 style="font-size:2em;text-align:center;">Contact us and Survey Questions</h1>';
             print '<hr>';
             print `<p class = "form-heading">Ask questions and we'll get back to you!</p>`;
 
@@ -239,88 +259,123 @@ if (isset($_POST["btnSubmit"])) {
                             >            
                     </p>
                     
-                    <fieldset class="radio <?php if ($genderERROR) print ' mistake'; ?>">
-                        <legend>What is your gender?</legend>
+                    <fieldset class="radio <?php if ($memberERROR) print ' mistake'; ?>">
+                        <legend>Who is your favorite Beatle?</legend>
                         <p>
-                            <label class="radio-field"><input type="radio" id="radGenderMale" name="radGender" value="Male" tabindex="300" 
-                            <?php if ($gender == "Male") echo ' checked="checked" '; ?>>
-                                Male</label>
+                            <label class="radio-field"><input type="radio" id="radMemberPaul" name="radMember" value="Paul" tabindex="300" 
+                            <?php if ($member == "Paul") echo ' checked="checked" '; ?>>
+                                Paul</label>
                         </p>
                         <p>    
-                            <label class="radio-field"><input type="radio" id="radGenderFemale" name="radGender" value="Female" tabindex="310" 
-                            <?php if ($gender == "Female") echo ' checked="checked" '; ?>>
-                                Female</label>
+                            <label class="radio-field"><input type="radio" id="radMemberJohn" name="radMember" value="John" tabindex="310" 
+                            <?php if ($member == "John") echo ' checked="checked" '; ?>>
+                                John</label>
                         </p>
                         <p>
-                            <label class="radio-field"><input type="radio" id="radGenderPrefer" name="radGender" value="Prefer" tabindex="320" 
-                            <?php if ($gender == "Prefer") echo ' checked="checked" '; ?>>
-                                Prefer not to say</label>
+                            <label class="radio-field"><input type="radio" id="radMemberGeorge" name="radMember" value="George" tabindex="320" 
+                            <?php if ($member == "George") echo ' checked="checked" '; ?>>
+                                George</label>
+                        </p>
+                        <p>
+                            <label class="radio-field"><input type="radio" id="radMemberRingo" name="radMember" value="Ringo" tabindex="330" 
+                            <?php if ($member == "Ringo") echo ' checked="checked" '; ?>>
+                                Ringo</label>
                         </p>
                     </fieldset>
                     
                     <fieldset class="checkbox <?php if ($checkERROR) print ' mistake'; ?>">
-                        <legend>Please check all that apply (at least two, including that you're satisfied please):</legend>
+                        <legend>Please check all of your favorite songs</legend>
 
                         <p>
                             <label class="check-field">
-                                <input <?php if ($cool) print " checked "; ?>
-                                    id="chkCool"
-                                    name="chkCool"
+                                <input <?php if ($comeTogether) print " checked "; ?>
+                                    id="chkComeTogether"
+                                    name="chkComeTogether"
                                     tabindex="400"
                                     type="checkbox"
-                                    value="Cool">I am cool</label>
+                                    value="Come Together">Come Together</label>
                         </p>
 
                         <p>
                             <label class="check-field">
-                                <input <?php if ($satisfied) print " checked "; ?>
-                                    id="chkSatisfied"
-                                    name="chkSatisfied"
+                                <input <?php if ($helloGoodbye) print " checked "; ?>
+                                    id="chkHelloGoodbye"
+                                    name="chkHelloGoodbye"
                                     tabindex="410"
                                     type="checkbox"
-                                    value="Satisfied">I am satisfied with this web site</label>
+                                    value="Hello Goodbye">Hello, Goodbye</label>
                         </p>
                         
                         <p>
                             <label class="check-field">
-                                <input <?php if ($willing) print " checked "; ?>
-                                    id="chkWilling"
-                                    name="chkWilling"
+                                <input <?php if ($pennyLane) print " checked "; ?>
+                                    id="chkPennyLane"
+                                    name="chkPennyLane"
                                     tabindex="420"
                                     type="checkbox"
-                                    value="Willing">I am willing to share this site with others</label>
+                                    value="Penny Lane">Penny Lane</label>
+                        </p>
+                        
+                        <p>
+                            <label class="check-field">
+                                <input <?php if ($dontLetMeDown) print " checked "; ?>
+                                    id="chkDontLetMeDown"
+                                    name="chkDontLetMeDown"
+                                    tabindex="430"
+                                    type="checkbox"
+                                    value="Don't Let Me Down">Don't Let Me Down</label>
+                        </p>
+
+                        <p>
+                            <label class="check-field">
+                                <input <?php if ($help) print " checked "; ?>
+                                    id="chkHelp"
+                                    name="chkHelp"
+                                    tabindex="440"
+                                    type="checkbox"
+                                    value="Help!">Help!</label>
+                        </p>
+                        
+                        <p>
+                            <label class="check-field">
+                                <input <?php if ($ticketToRide) print " checked "; ?>
+                                    id="chkTicketToRide"
+                                    name="chkTicketToRide"
+                                    tabindex="450"
+                                    type="checkbox"
+                                    value="Ticket to Ride">Ticket to Ride</label>
                         </p>
                     </fieldset>
                     
-                    <fieldset  class="listbox <?php if ($timeERROR) print ' mistake'; ?>">
-                        <legend>Time Zone</legend>
+                    <fieldset  class="listbox <?php if ($pageERROR) print ' mistake'; ?>">
+                        <legend>Favorite Page</legend>
                         <p>
-                            <select id="zneTime" 
-                                    name="zneTime" 
+                            <select id="favPage" 
+                                    name="favPage" 
                                     tabindex="500" >
-                                <option <?php if ($time == "Eastern Standard") print " selected "; ?>
-                                    value="Eastern Standard">Eastern Standard</option>
+                                <option <?php if ($page == "Home") print " selected "; ?>
+                                    value="Home">Home</option>
                                 
-                                <option <?php if ($time == "Central Standard") print " selected "; ?>
-                                    value="Central Standard">Central Standard</option>
+                                <option <?php if ($page == "About the Band") print " selected "; ?>
+                                    value="About the Band">About the Band</option>
 
-                                <option <?php if ($time == "Mountain Standard") print " selected "; ?>
-                                    value="Mountain Standard">Mountain Standard</option>
+                                <option <?php if ($page == "Shows") print " selected "; ?>
+                                    value="Shows">Shows</option>
 
-                                <option <?php if ($time == "Pacific Standard") print " selected "; ?>
-                                    value="Pacific Standard">Pacific Standard</option>
+                                <option <?php if ($page == "Photos") print " selected "; ?>
+                                    value="Photos">Photos</option>
                                 
-                                <option <?php if ($time == "Alaska Standard") print " selected "; ?>
-                                    value="Alaska Standard">Alaska Standard</option>
+                                <option <?php if ($page == "Videos") print " selected "; ?>
+                                    value="Videos">Videos</option>
                                 
-                                <option <?php if ($time == "Hawaii-Aleutian Standard") print " selected "; ?>
-                                    value="Hawaii-Aleutian Standard">Hawaii-Aleutian Standard</option>
+                                <option <?php if ($page == "Contact") print " selected "; ?>
+                                    value="Contact">Contact</option>
                             </select>
                         </p>
                     </fieldset>
                     
                     <p>
-                        <label class="required" for="txtComments">Comments</label>
+                        <label class="required" for="txtComments">Comments and Questions</label>
                         <textarea <?php if ($commentsERROR) print 'class="mistake"'; ?>
                             id="txtComments" 
                             name="txtComments" 

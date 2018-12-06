@@ -33,6 +33,16 @@ include ("top.php");
         <p>The podcast looks in detail at Hamilton’s design, but also at the connection between the Beatles and the art world in that period, particularly through Paul McCartney’s connection with the...</p>
         <p>Read More at <a href='https://www.theartnewspaper.com/news/the-beatles-white-album'>www.theartnewspaper.com</a></p>
     </article>
+    <hr>
+    <article class='news'>
+        <h2>Paul McCartney is coming to ... Arlington?!</h2>
+        <h3>By Gordon Dickson and Jeff Wilson</h3>
+        <img src="images/startele.jpg" alt="McCartney Playing Live" style="float:right;width:450px;height:300px;">
+        <p>ARLINGTON - Legendary rock-and-roll performer Paul McCartney will play Globe Life Park in Arlington on June 14.</p>
+        <p>The Beatles founder added the home of the Texas Rangers baseball club to his schedule, Live Nation announced Tuesday.</p>
+        <p>“It will be a historic night for Globe Life Park in Arlington, which has never hosted a concert tour stop, let alone an acclaimed artist of McCartney’s significance,” the Texas Rangers said in a statement. “Globe Life Park in Arlington will host its first-ever touring concert in grand style, adding another venue to the legend’s long history of baseball park performances...</p>
+        <p>Read More at <a href='https://www.star-telegram.com/entertainment/music/article222601670.html'>www.star-telegram.com</a></p>
+    </article>
 </main>
 
 <?php

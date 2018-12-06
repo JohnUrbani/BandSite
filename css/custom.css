@@ -193,12 +193,22 @@ input[type=submit] {
 /* =============== Footer =============== */
 
 footer {
-    height: 3em;
+    height: 4.5em;
     background-color: #555;
     padding: 5px;
     width: 950px;
     margin-left: 20px;
     float: left;
+}
+
+p.footer {
+    margin: 0px;
+    color: white;
+    text-align: center;
+}
+
+#index .footer {
+    margin: 5px;
 }
 
 /* =============== Media =============== */
@@ -244,4 +254,21 @@ footer {
      padding: 3%;
      padding-top: 0px;
      margin: 1%;
+}
+
+/* =============== Photos =============== */
+#photos article {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 215px;
+}
+
+#photos article:hover {
+  border: 1px solid #777;
+}
+
+#photos article img {
+  width: 100%;
+  height: auto;
 }
