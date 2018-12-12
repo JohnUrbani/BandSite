@@ -207,6 +207,10 @@ p.footer {
     text-align: center;
 }
 
+p.footer a {
+    color:lightblue;
+}
+
 #index .footer {
     margin: 5px;
 }

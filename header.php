@@ -1,4 +1,4 @@
 <!-- ######################     Page header   ############################## -->
 <header>
-    <h1>The band header goes up here!</h1>
+    <h1>Welcome to our Beatles Website</h1>
 </header>
